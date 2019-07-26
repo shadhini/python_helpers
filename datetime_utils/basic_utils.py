@@ -7,7 +7,7 @@ def now_as_string(string_format=None):
     if string_format is None:
         return datetime.now().strftime(COMMON_DATE_TIME_FORMAT)
     else:
-        return datetime.now().strptime(string_format)
+        return datetime.now().strftime(string_format)
 
 
 def now_as_datetime(format=None):

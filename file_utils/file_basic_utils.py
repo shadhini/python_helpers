@@ -2,11 +2,24 @@ import os
 
 
 def write_to_file(file_name, data):
+    """
+    Write to file (w+, if there's no such file, a file would be created)
+    :param file_name: file_path/file_name
+    :param data:
+    :return:
+    """
     with open(file_name, 'w+') as f:
         f.write('\n'.join(data))
 
 
 def append_to_file(file_name, data):
+
+    """
+    Append to file (a+, if there's no such file, a file would be created)
+    :param file_name: file_path/file_name
+    :param data:
+    :return:
+    """
     with open(file_name, 'a+') as f:
         f.write('\n'.join(data))
 

@@ -13,8 +13,6 @@ def create_csv(file_name, data):
         writer = csv.writer(csvFile)
         writer.writerows(data)
 
-    csvFile.close()
-
 
 def append_csv(file_name, row):
     """
@@ -27,8 +25,6 @@ def append_csv(file_name, row):
     with open(file_name, 'a') as csvFile:
         writer = csv.writer(csvFile)
         writer.writerow(row)
-
-    csvFile.close()
 
 
 def read_csv(file_name):
