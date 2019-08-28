@@ -31,3 +31,20 @@ def str_to_datetime(datetime_string, format=None):
         datetime.strptime(datetime_string, format)
 
 
+def round_to_nearest_hour(datetime_string, format=None):
+
+    if format is None:
+        time = datetime.strptime(datetime_string, COMMON_DATE_TIME_FORMAT)
+    else:
+        time = datetime.strptime(datetime_string, format)
+
+    if time.minute > 30:
+        return (time + timedelta(hours=1)).strftime("%Y-%m-%d %H:00:00")
+
+    return time.strftime("%Y-%m-%d %H:00:00")
+
+
+print(round_to_nearest_hour("2019-08-30 08:29:00"))
+
+
+
