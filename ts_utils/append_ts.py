@@ -27,6 +27,8 @@ def append_ts(original_ts, new_ts):
                 appended_ts.append(new_ts[new_ts_index])
                 new_ts_index += 1
         else:
+            if original_ts_index < len(original_ts):
+                appended_ts.extend(original_ts[original_ts_index:])
             break
 
     if new_ts_index < len(new_ts):
@@ -42,5 +44,9 @@ TS2 = [["2019-08-22 01:30:00", 1.8], ["2019-08-22 02:30:00", 1.5], ["2019-08-22 
 
 TS1 = [["2019-08-22 01:30:00", 1.8], ["2019-08-22 02:30:00", 1.5], ["2019-08-22 03:30:00", 1.4]]
 
-print(append_ts(original, TS2))
+TS3 = [['2019-08-19 00:30:00', 9.4]]
+
+TS4 = []
+
+print(append_ts(original, TS4))
 
