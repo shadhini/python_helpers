@@ -14,7 +14,3 @@ def read_csv_to_df(csv_file_name, delimiter, header):
     else:
         return pd.read_csv(csv_file_name, delimiter=delimiter)
 
-
-
-
-
