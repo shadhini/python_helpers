@@ -17,7 +17,7 @@ def read_csv_to_df(csv_file_name, delimiter, header):
 
 
 # !wget 46.101.230.157/dilan/pandas_tutorial_read.csv
-df = read_csv_to_df(csv_file_name='/home/shadhini/dev/repos/shadhini/python_helpers/panda_dataframes/pandas_tutorial_read.csv', delimiter=";",
+df = read_csv_to_df(csv_file_name='/home/shadhini/dev/repos/shadhini/python_helpers/pandas_dataframes/pandas_tutorial_read.csv', delimiter=";",
                header=['my_datetime', 'event', 'country', 'user_id', 'source', 'topic'])
 
 # print first few rows of the dataframe
