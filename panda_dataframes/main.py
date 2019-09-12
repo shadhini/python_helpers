@@ -39,3 +39,10 @@ df = read_csv_to_df(csv_file_name='/home/shadhini/dev/repos/shadhini/python_help
 # Filter for specific values in your dataframe
 #print(df[df.source == 'SEO'])
 
+# Slicing dataframe[start_index:end_index:index_step]
+# print("*****")
+# print(df[:5])
+print("*****")
+print(df[:11:10])
+# print(df)
+
