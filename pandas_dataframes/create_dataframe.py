@@ -62,6 +62,8 @@ def list_of_lists_to_df_first_column_as_index(data):
     index = original_data[:, 0]
     data = original_data[:, 1:]
 
+    # datetime_index = index.astype('datetime64', copy=False)
+
     return pd.DataFrame.from_records(data=data, index=index)
 
 
@@ -79,4 +81,4 @@ TS1 = [["2019-08-22 01:30:00", 1.8], ["2019-08-22 02:30:00", 1.5], ["2019-08-22 
 # print(list_of_lists_to_df_first_row_as_columns_first_column_as_index(data=TS2))
 
 
-print(list_of_lists_to_df_first_row_as_columns_first_column_as_index(data=TS2))
+# print(list_of_lists_to_df_first_column_as_index(data=TS2))
