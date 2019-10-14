@@ -44,7 +44,24 @@ def round_to_nearest_hour(datetime_string, format=None):
     return time.strftime("%Y-%m-%d %H:00:00")
 
 
-print(round_to_nearest_hour("2019-08-30 08:29:00"))
+def round_to_nearest_half_hour(datetime_string, format=None):
+
+    if format is None:
+        time = datetime.strptime(datetime_string, COMMON_DATE_TIME_FORMAT)
+    else:
+        time = datetime.strptime(datetime_string, format)
+
+    if time.minute <= 15:
+        return time.strftime("%Y-%m-%d %H:00:00")
+    elif (time.minute > 15) and (time.minute < 45):
+        return time.strftime("%Y-%m-%d %H:30:00")
+
+    return (time + timedelta(hours=1)).strftime("%Y-%m-%d %H:00:00")
+
+
+# print(round_to_nearest_hour("2019-08-30 08:15:00"))
+
+print(round_to_nearest_half_hour("2019-08-30 23:58:00"))
 
 
 
