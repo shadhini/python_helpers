@@ -56,3 +56,9 @@
 #** command should be placed within brackets, preceded by a $ sign.
 myvar=$(date -r /home/shadhini/dev/repos/shadhini/python_helpers/bash_utils/hello_world/original.txt)
 echo $myvar
+
+
+############################
+# If Statement
+############################
+#** https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php
