@@ -22,6 +22,7 @@ timeseries = list_of_lists_to_df_first_column_as_index(data=TS2)
 
 # Left Join (left.join(right))
 continuous_ts = time_index.join(timeseries)
+# continuous_ts = time_index.join(timeseries, lsuffix='_left', rsuffix='_right') # with suffixes in case of conflicting columns
 interpolated_ts = ts_linear_interpolation(dataframe=continuous_ts, interpolation_method='linear')
 
 print(interpolated_ts)

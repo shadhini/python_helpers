@@ -49,5 +49,12 @@ df = read_csv_to_df(csv_file_name='/home/shadhini/dev/repos/shadhini/python_help
 print(df[df.columns[0]])
 
 # Iterate through rows of a pandas dataframe
-for index, row in df.iterrows():
-    print(row['my_datetime'], row['event'])
+# for index, row in df.iterrows():
+#     print(row['my_datetime'], row['event'])
+
+# refering to column through column index --> df[[column_index]]
+# print(df[[0]])
+
+# change column data type in dataframe
+# df[[0]] = df[[0]].astype('float64') * 1.5
+
