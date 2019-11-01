@@ -58,3 +58,7 @@ print(df[df.columns[0]])
 # change column data type in dataframe
 # df[[0]] = df[[0]].astype('float64') * 1.5
 
+# take sum of all columns to one column
+# df['sum'] = df.sum(axis=1)
+
+
