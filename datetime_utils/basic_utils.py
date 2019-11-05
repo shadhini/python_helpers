@@ -74,11 +74,28 @@ def round_to_nearest_x_minutes(datetime_string, mins, format=None):
     return (base_time + timedelta(minutes=mins*multiplier)).strftime(format)
 
 
+def round_datetime_to_nearest_x_minutes(datetime_value, mins):
+
+    base_time = datetime_value.replace(minute=0, second=0, microsecond=0)
+
+    multiplier = round(datetime_value.minute / mins)
+
+    return base_time + timedelta(minutes=mins*multiplier)
+
+
 # print(round_to_nearest_hour("2019-08-30 08:15:00"))
 
 # print(round_to_nearest_half_hour("2019-08-30 23:58:00"))
 
-print(round_to_nearest_x_minutes("2019-08-30 08:16:00", 15))
+# print(round_to_nearest_x_minutes("2019-08-30 08:16:00", 15))
+
+print(type(datetime.now()))
+
+time = datetime.strptime("2019-10-05 23:40:00", COMMON_DATE_TIME_FORMAT)
+
+print(round_datetime_to_nearest_x_minutes(time, 15))
+
+
 
 
 
