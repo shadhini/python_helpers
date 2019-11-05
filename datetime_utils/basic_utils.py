@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import math
 
 COMMON_DATE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 
@@ -74,11 +75,20 @@ def round_to_nearest_x_minutes(datetime_string, mins, format=None):
     return (base_time + timedelta(minutes=mins*multiplier)).strftime(format)
 
 
-def round_datetime_to_nearest_x_minutes(datetime_value, mins):
+def round_up_datetime_to_nearest_x_minutes(datetime_value, mins):
 
     base_time = datetime_value.replace(minute=0, second=0, microsecond=0)
 
-    multiplier = round(datetime_value.minute / mins)
+    multiplier = math.ceil(datetime_value.minute / mins)
+
+    return base_time + timedelta(minutes=mins*multiplier)
+
+
+def round_down_datetime_to_nearest_x_minutes(datetime_value, mins):
+
+    base_time = datetime_value.replace(minute=0, second=0, microsecond=0)
+
+    multiplier = math.floor(datetime_value.minute / mins)
 
     return base_time + timedelta(minutes=mins*multiplier)
 
@@ -91,9 +101,10 @@ def round_datetime_to_nearest_x_minutes(datetime_value, mins):
 
 print(type(datetime.now()))
 
-time = datetime.strptime("2019-10-05 23:40:00", COMMON_DATE_TIME_FORMAT)
+time = datetime.strptime("2019-10-05 23:45:00", COMMON_DATE_TIME_FORMAT)
 
-print(round_datetime_to_nearest_x_minutes(time, 15))
+print(round_up_datetime_to_nearest_x_minutes(time, 15))
+print(round_down_datetime_to_nearest_x_minutes(time, 15))
 
 
 
