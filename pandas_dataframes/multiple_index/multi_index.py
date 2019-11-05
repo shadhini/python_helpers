@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from pandas_dataframes.create_dataframe import  csv_to_df
+from pandas_dataframes.create_dataframe import csv_to_df
 
 
 WRF_A = csv_to_df('naula_fcst_WRF_A_d0_18.csv', ',')
@@ -28,6 +28,33 @@ for fcst in forecast_list:
     else:
         df = pd.merge(df, fcst, on='time', how='outer')
 
-print(df)
-print(df['time'].min())
+# print(df)
+# print(df['time'].min())
+
+######## merge timeseries ##################
+final_merged_df = pd.merge(df, obs, on='time', how='outer')
+final_left_merged_df = pd.merge(df, obs, on='time', how='left')
+# print(final_left_merged_df)
+
+df1 = final_left_merged_df.copy()
+df2 = final_left_merged_df.copy()
+
+
+###### set multiple indexes ##############
+df1['lat'] = 7.741352
+df1['lon'] = 80.684432
+# print(df1)
+df1.set_index(['time', 'lon', 'lat'], inplace=True)
+
+df2['lat'] = 7.741352
+df2['lon'] = 80.684432
+df2.set_index(['time', 'lon', 'lat'], inplace=True)
+
+# print(df1)
+# print(df2)
+
+
+######## append dataframes ##########
+print(df1.append(df2))
+
 
