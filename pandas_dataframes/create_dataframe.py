@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 
-def csv_to_df(csv_file_name, delimiter, header):
+def csv_to_df(csv_file_name, delimiter, header=None):
     """
     :param csv_file_name: csv file name: e.g. zoo.csv
     :param delimiter: delimiter used in the csv file to separate columns: e.g. ','
@@ -10,7 +10,7 @@ def csv_to_df(csv_file_name, delimiter, header):
     e.g. ['my_datetime', 'event', 'country', 'user_id', 'source', 'topic']
     :return: pandas dataframe containing file content
     """
-    if header:
+    if header is not None:
         return pd.read_csv(csv_file_name, delimiter=delimiter, names=header)
     else:
         return pd.read_csv(csv_file_name, delimiter=delimiter)
