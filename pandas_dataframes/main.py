@@ -62,3 +62,10 @@ print(df[df.columns[0]])
 # df['sum'] = df.sum(axis=1)
 
 
+# display all rows of a pandas dataframe
+pd.set_option('display.max_rows', df.shape[0]+1)
+pd.set_option('display.max_columns', df.shape[1] + 1)
+print(df)
+
+
+
