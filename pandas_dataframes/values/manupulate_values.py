@@ -1,8 +1,12 @@
 import pandas as pd
 import numpy as np
 
-# coefficients = pd.read_csv('sb_rf_coefficients.csv', delimiter=',')
+coefficients = pd.read_csv('sb_rf_coefficients.csv', delimiter=',')
 
+#### iterate through distict values
+distinct_names = coefficients.name.unique()
+for name in distinct_names:
+    print(coefficients[coefficients.name == name])
 #### unique values of a column --> dataframe.coulumn_name.unique()
 # distinct_ids = coefficients.curw_obs_id.unique()
 #
@@ -36,21 +40,21 @@ df = pd.DataFrame({'a': [1, 5, 9, np.nan], 'b': [9, np.nan, 55, 4], 'c': [5, 4, 
 #  # df.iloc[:, i].fillna(m, inplace=True)
 #  df.iloc[:, i] = df.iloc[:, i].fillna(m)
 
-print(df)
-
-
-def replace_negative_numbers_with_nan(df):
-    num = df._get_numeric_data()
-    num[num < 0] = np.nan
-    return df
-
-
-def replace_nan_with_row_average(df):
-    m = df.mean(axis=1)
-    for i, col in enumerate(df):
-        df.iloc[:, i] = df.iloc[:, i].fillna(m)
-    return df
-
-
-print(replace_negative_numbers_with_nan(df))
-print(replace_nan_with_row_average(df))
+# print(df)
+#
+#
+# def replace_negative_numbers_with_nan(df):
+#     num = df._get_numeric_data()
+#     num[num < 0] = np.nan
+#     return df
+#
+#
+# def replace_nan_with_row_average(df):
+#     m = df.mean(axis=1)
+#     for i, col in enumerate(df):
+#         df.iloc[:, i] = df.iloc[:, i].fillna(m)
+#     return df
+#
+#
+# print(replace_negative_numbers_with_nan(df))
+# print(replace_nan_with_row_average(df))
