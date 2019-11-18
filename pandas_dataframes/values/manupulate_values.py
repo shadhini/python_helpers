@@ -58,3 +58,6 @@ df = pd.DataFrame({'a': [1, 5, 9, np.nan], 'b': [9, np.nan, 55, 4], 'c': [5, 4, 
 #
 # print(replace_negative_numbers_with_nan(df))
 # print(replace_nan_with_row_average(df))
+
+##### min value of column #####
+# df['time'].min()
