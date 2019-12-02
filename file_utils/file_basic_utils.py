@@ -63,3 +63,20 @@ def read_file(file_name):
     return content
 
 
+def read_file_line_by_line(file_name):
+    """
+    Read file content line by line
+    :param file_name: file_path/file_name
+    :return: return the lines of the file content as a list
+    """
+
+    lines = []
+
+    with open(file_name, 'r') as f:
+        content = f.readlines()
+
+        for line in content:
+            lines.append(line)
+
+    return lines
+
