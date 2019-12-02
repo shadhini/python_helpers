@@ -49,3 +49,17 @@ def create_csv_like_txt(file_name, data):
 
         f.close()
 
+
+def read_file(file_name):
+    """
+    Read content from a file
+    :param file_name: file_path/file_name
+    :return: return the whole content of the file
+    """
+
+    with open(file_name, 'r') as f:
+        content = f.read()
+
+    return content
+
+
