@@ -31,10 +31,11 @@ selection = shp_file_data[0:5]
 shp_file_data['area'] = None
 
 for index, row in shp_file_data.iterrows():
+    print(row['geometry'])
     # print(index)
     # print(type(row['geometry']))
     # print((row['geometry']).area)
-    shp_file_data.loc[index, 'area'] = row['geometry'].area
+    # shp_file_data.loc[index, 'area'] = row['geometry'].area
 
-print(shp_file_data['area'].head(2))
+# print(shp_file_data['area'].head(2))
 
