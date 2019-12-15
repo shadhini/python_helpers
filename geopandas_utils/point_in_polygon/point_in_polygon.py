@@ -9,7 +9,9 @@ d03_grids = pd.read_csv('d03_grids_sorted.csv', delimiter=",")
 klb = gpd.read_file('klb-wgs84.shp')
 
 # polygon = klb.iloc[0]['geometry']
-# # print(type(polygon))
+
+
+
 #
 # # print(klb['geometry'].area)
 #
