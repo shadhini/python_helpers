@@ -48,7 +48,7 @@ df = read_csv_to_df(csv_file_name='/home/shadhini/dev/repos/shadhini/python_help
 
 print(df[df.columns[0]])
 
-# Iterate through rows of a pandas dataframe
+# Iterate through rows of a pandas dataframe, with index
 # for index, row in df.iterrows():
 #     print(row['my_datetime'], row['event'])
 
