@@ -1,7 +1,12 @@
 import pandas as pd
 import numpy as np
 
-from pandas_dataframes.create_dataframe import csv_to_df
+
+def csv_to_df(csv_file_name, delimiter, header=None):
+    if header is not None:
+        return pd.read_csv(csv_file_name, delimiter=delimiter, names=header)
+    else:
+        return pd.read_csv(csv_file_name, delimiter=delimiter)
 
 
 WRF_A = csv_to_df('naula_fcst_WRF_A_d0_18.csv', ',')
