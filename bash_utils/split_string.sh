@@ -6,6 +6,7 @@ then
   date=$(date -u -d '-1 day' '+%F')
 fi
 
+# split string by delimiter '-'
 IFS='-' read -ra DATELIST <<< "$date"
 echo $DATELIST
 session_id=""
