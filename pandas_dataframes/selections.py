@@ -1,6 +1,6 @@
 import pandas as pd
 
-
+# for colum based selections
 def select_sub_region(all_grids_csv_file_path, x_min, x_max, y_min, y_max):
     """
     Select sub region based on lat lon
@@ -19,3 +19,11 @@ def select_sub_region(all_grids_csv_file_path, x_min, x_max, y_min, y_max):
 
     return selected_grids
 
+
+# for both column based and multi index based selections
+def select_rectagular_sub_region(all_grids, lon_min=79.6, lon_max=81.0, lat_min=6.6, lat_max=7.4):
+
+    selected_grids = all_grids.query('longitude >= {} & longitude <= {} & latitude >= {} & latitude <= {}'
+                                     .format(lon_min, lon_max, lat_min, lat_max))
+
+    return selected_grids
