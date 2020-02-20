@@ -52,6 +52,10 @@ print(df[df.columns[0]])
 # for index, row in df.iterrows():
 #     print(row['my_datetime'], row['event'])
 
+# Iterate through rows of a pandas series, with index
+# for index, row in df.iteritems():
+#     print(index, row)
+
 # refering to column through column index --> df[[column_index]]
 # print(df[[0]])
 
