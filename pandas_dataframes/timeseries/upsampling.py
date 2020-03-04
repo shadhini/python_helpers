@@ -1,10 +1,16 @@
 import pandas as pd
+from pandas_dataframes.create_df import csv_to_df
 
-index = pd.date_range('1/1/2000', periods=9, freq='T')
-series = pd.Series(range(9), index=index)
+COMMON_DATE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 
-series.resample('30S').asfreq()
+series = csv_to_df('sample_curw_sim_obs2.csv', ',')
+series['time'] = pd.to_datetime(series['time'], format=COMMON_DATE_TIME_FORMAT)
+series.set_index('time', inplace=True)
 
-series.resample('30S').pad()
+s1 = series.resample('H').asfreq()
 
-series.resample('30S').bfill()
+print(s1)
+
+# series.resample('30S').pad()
+#
+# series.resample('30S').bfill()
