@@ -80,3 +80,10 @@ def read_file_line_by_line(file_name):
 
     return lines
 
+
+def read_last_line(filename):
+    with open(filename, 'r') as f:
+        lines = f.read().splitlines()
+        return lines[-1]
+
+
