@@ -1,4 +1,5 @@
 import os
+import traceback
 
 
 def write_to_file(file_name, data):
@@ -87,3 +88,8 @@ def read_last_line(filename):
         return lines[-1]
 
 
+def is_file_exist(file_path):
+    if not os.path.exists(file_path):
+        print('Unable to find file : ', file_path)
+        traceback.print_exc()
+        exit(1)
