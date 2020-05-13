@@ -1,0 +1,74 @@
+Patient_No, Confirmed_Date, Residence_City, Detected_City, Detected_Prefecture, Gender, Age, Status, Notes
+"1","2020-01-27","China, Hubei","Katunayake","Gampaha","F","44","Discharged",NULL
+"2","2020-03-10","Mattegoda","Mattegoda","Colombo","M","52","Discharged",NULL
+"3","2020-03-12",NULL,"Colombo 8","Colombo","M","44","Hospitalized",NULL
+"4","2020-03-13",NULL,"Colombo 8","Colombo","M","41","Hospitalized",NULL
+"5","2020-03-13",NULL,"Mahara","Gampaha","M","37","Hospitalized",NULL
+"6","2020-03-13",NULL,"Udabaddawa","Kurunegala","M","43","Hospitalized",NULL
+"7","2020-03-14",NULL,"Dunkannawa","Puttalam","M","44","Hospitalized",NULL
+"8","2020-03-14",NULL,"Colombo 8","Colombo","M","43","Hospitalized",NULL
+"9","2020-03-14",NULL,"Mt. Lavania","Colombo","M","42","Hospitalized",NULL
+"10","2020-03-14",NULL,"Colombo 8","Colombo","F","56","Hospitalized",NULL
+"11","2020-03-14",NULL,"Galle","Galle","F","17","Hospitalized",NULL
+"12","2020-03-15",NULL,"Akuragoda","Colombo","M",0,"Hospitalized",NULL
+"13","2020-03-15",NULL,"Rajagiriya","Colombo","M",0,"Hospitalized",NULL
+"14","2020-03-15",NULL,NULL,"Colombo","M",0,"Hospitalized",NULL
+"15","2020-03-15",NULL,"Colombo 6","Colombo","M",0,"Hospitalized",NULL
+"16","2020-03-15",NULL,"Kandakadu","Polonnaruwa","M",0,"Hospitalized",NULL
+"17","2020-03-15",NULL,"Kandakadu","Polonnaruwa","M",0,"Hospitalized",NULL
+"18","2020-03-15",NULL,"Kandakadu","Polonnaruwa","M",0,"Hospitalized",NULL
+"19","2020-03-16",NULL,"Kandakadu","Polonnaruwa","F","13","Hospitalized",NULL
+"20","2020-03-16",NULL,"Batticaloa","Batticaloa","M","73","Hospitalized",NULL
+"21","2020-03-16",NULL,"Kandakadu","Polonnaruwa",NULL,"50","Hospitalized",NULL
+"22","2020-03-16",NULL,"Kandakadu","Polonnaruwa",NULL,"37","Hospitalized",NULL
+"23","2020-03-16",NULL,"Kandakadu","Polonnaruwa","M",0,"Hospitalized",NULL
+"24","2020-03-16",NULL,"Kandakadu","Polonnaruwa",NULL,0,"Hospitalized",NULL
+"25","2020-03-16",NULL,"Kandakadu","Polonnaruwa",NULL,0,"Hospitalized",NULL
+"26","2020-03-16",NULL,"Galkanda","Kandy",NULL,0,"Hospitalized",NULL
+"27","2020-03-16",NULL,"Kandakadu","Polonnaruwa",NULL,0,"Hospitalized",NULL
+"28","2020-03-16",NULL,"Kandakadu","Polonnaruwa",NULL,0,"Hospitalized",NULL
+"29","2020-03-17",NULL,"Kandakadu","Polonnaruwa",NULL,0,"Hospitalized",NULL
+"30","2020-03-17",NULL,"Marawila","Puttalam",NULL,0,"Hospitalized",NULL
+"31","2020-03-17",NULL,"Ratnapura","Ratnapura","M","25","Hospitalized",NULL
+"32","2020-03-17",NULL,"Batticaloa","Batticaloa",NULL,0,"Hospitalized",NULL
+"33","2020-03-17",NULL,"Kandakadu","Polonnaruwa",NULL,0,"Hospitalized",NULL
+"34","2020-03-17",NULL,"Vauniya","Vavuniya","F",0,"Hospitalized",NULL
+"35","2020-03-17",NULL,"Udugampola","Gampaha",NULL,0,"Hospitalized",NULL
+"36","2020-03-17",NULL,"Kelaniya","Gampaha","M","61","Hospitalized",NULL
+"37","2020-03-17",NULL,"Wattala","Gampaha",NULL,0,"Hospitalized",NULL
+"38","2020-03-17",NULL,"Nelundeniya","Kegalle",NULL,0,"Hospitalized",NULL
+"39","2020-03-17",NULL,NULL,"Kalutara",NULL,"1","Hospitalized",NULL
+"40","2020-03-17",NULL,"Colombo 8","Colombo","F",0,"Hospitalized",NULL
+"41","2020-03-17",NULL,"Kandakadu","Polonnaruwa",NULL,0,"Hospitalized",NULL
+"42","2020-03-17",NULL,"Batticaloa","Batticaloa",NULL,0,"Hospitalized",NULL
+"43","2020-03-17",NULL,"Waikkal","Puttalam",NULL,0,"Hospitalized",NULL
+"44","2020-03-18",NULL,"Waikkal","Puttalam",NULL,0,NULL,NULL
+"45","2020-03-18",NULL,"Morawaka","Galle",NULL,0,NULL,NULL
+"46","2020-03-18",NULL,"Kandakadu","Polonnaruwa",NULL,0,"Hospitalized",NULL
+"47","2020-03-18",NULL,"Bandaragama","Kalutara",NULL,0,"Hospitalized",NULL
+"48","2020-03-18",NULL,"Beruwala","Kalutara",NULL,0,"Hospitalized",NULL
+"49","2020-03-18",NULL,"Malabe","Colombo",NULL,0,NULL,NULL
+"50","2020-03-18",NULL,"Dehiwala","Colombo",NULL,0,NULL,NULL
+"51","2020-03-18",NULL,"Ratmalana","Colombo",NULL,0,NULL,NULL
+"52","2020-03-18",NULL,"Wattala","Gampaha",NULL,0,NULL,NULL
+"53","2020-03-19",NULL,"Ja-Ela","Gampaha",NULL,0,NULL,"From Itally"
+"54","2020-03-19",NULL,"Rathmalana","Colombo",NULL,0,NULL,"From Itally"
+"55","2020-03-19",NULL,"Ratnapura","Ratnapura","F",0,NULL,"Gem business person's wife"
+"56","2020-03-19",NULL,"Ratnapura","Ratnapura","F",0,NULL,NULL
+"57","2020-03-19",NULL,"Waikkala","Puttalam",NULL,0,NULL,NULL
+"58","2020-03-19",NULL,"Ja-Ela","Gampaha",NULL,0,NULL,NULL
+"59","2020-03-19",NULL,"Ja-Ela","Gampaha",NULL,0,NULL,NULL
+"60","2020-03-20",NULL,"Welimada","Badulla",NULL,0,NULL,NULL
+"61","2020-03-20",NULL,"Kandakadu","Polonnaruwa",NULL,0,NULL,NULL
+"62","2020-03-20",NULL,"Kandakadu","Polonnaruwa",NULL,0,NULL,NULL
+"63","2020-03-20",NULL,"Waikkala","Puttalam",NULL,0,NULL,NULL
+"64","2020-03-20",NULL,"Ja-Ela","Gampaha",NULL,0,NULL,NULL
+"65","2020-03-20",NULL,"Ja-Ela","Gampaha",NULL,0,NULL,NULL
+"66","2020-03-20",NULL,"Colombo 08","Colombo",NULL,0,NULL,NULL
+"67","2020-03-20",NULL,NULL,"Unspecified",NULL,0,NULL,NULL
+"68","2020-03-20",NULL,NULL,"Unspecified",NULL,0,NULL,NULL
+"69","2020-03-20",NULL,NULL,"Unspecified",NULL,0,NULL,NULL
+"70","2020-03-20",NULL,NULL,"Unspecified",NULL,0,NULL,NULL
+"71","2020-03-20",NULL,NULL,"Unspecified",NULL,0,NULL,NULL
+"72","2020-03-20",NULL,NULL,"Unspecified",NULL,0,NULL,NULL
+"73","2020-03-20",NULL,NULL,"Unspecified",NULL,0,NULL,NULL
