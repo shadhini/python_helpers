@@ -15,6 +15,11 @@ import geopandas as gpd
 from scipy.spatial import Voronoi
 from shapely.geometry import Polygon, Point
 
+"""
+divide points set to thiessan polygon created based on active observational rain gauges 
+to decide which observation to be used for the point based in the polygon each point belongs to
+"""
+
 
 def read_csv(file_name):
     with open(file_name, 'r') as f:
