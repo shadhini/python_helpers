@@ -1,0 +1,73 @@
+REPLACE internally performs a delete and then an insert.
+This can cause problems if you have a foreign key constraint pointing at that row.
+In this situation the REPLACE could fail or worse: if your foreign key is set to cascade delete,
+the REPLACE will cause rows from other tables to be deleted.
+This can happen even though the constraint was satisfied both before and after the REPLACE operation.
+
+Using INSERT ... ON DUPLICATE KEY UPDATE avoids this problem and is therefore prefered.
+
+When using REPLACE instead of INSERT ... ON DUPLICATE KEY UPDATE,
+I sometimes observe key locking or deadlock problems when multiple queries arrive quickly for a given key.
+The atomicity of the latter (in addition to not causing cascade deletes) is
+all the more reason to use it.
+
+
+
+To answer the question in terms of performance, I did a test using both the methods
+
+Replace Into involves:
+1.Try insert on the table
+2. If 1 fails, delete row and insert new row
+
+Insert on Duplicate Key Update involves:
+1.Try insert on table
+2.If 1 fails, update row
+
+If all the steps involved are inserts, there should be no difference in performance. The speed has to depend on the number of updates involved. Worst case is when all the statements are updates
+
+I have tried both the statements on my InnoDB table involving 62,510 entries (only updates). On camparing speeds:
+Replace Into: 77.411 seconds
+Insert on Duplicate Key Update: 2.446 seconds
+
+
+Insert on Duplicate Key update is almost 32 times faster.
+Table Size: 1,249,250 rows with 12 columns on an Amazon m3.medium
+
+
+
+
+
+
+
+
+The semantics of normal ad-hoc insertions with a primary key are expensive
+because they require disk seeks on large data sets.
+It would be better to use “replace into” or to use “insert ignore” over normal inserts.
+In this post, I explain why another alternative to normal inserts, “insert … on duplicate key update” is no better in MySQL,
+because the command incurs disk seeks.
+
+The reason “insert ignore” and “replace into” can be made fast with TokuDB’s fractal trees is that the semantics of what to do in case a duplicate key is found is simple. In one case, you ignore, and in the other, you overwrite. With specific tombstone messages defined for these simple semantics, we defer the uniqueness check to a more opportune time.
+
+The semantics of “insert … on duplicate key update” are not simple:
+
+
+if the primary (or unique) key does not exist, insert the new row
+if the primary key does exist, perform some update as defined in the SQL statement
+The problem is we do not have a way of encoding the SQL update function into a message, the way we are able to encode “replace into” as an ‘i’ and “insert ignore” as an ‘ii’. If we did, we could similarly make “insert … on duplicate key update” fast.
+
+I am not claiming that this is not theoretically possible, just that the storage engine API in MySQL does not allow for the encoding of updates as messages. Instead, what MySQL does is the following:
+
+
+call handler::write_row to attempt an insertion, if it succeeds, we are done
+if handler::write_row returns an error indicating a duplicate key, outside of the handler, apply the necessary update to the row
+call handler::update_row to apply the update
+The storage engine API does not have any access to the function that applies an update to the existing row. This is why the storage engine has no way of encoding any SQL update function (even some simple ones, such as “increment column a”).
+
+So, in the meantime, to implement these semantics, B-trees and Fractal Tree data structures both:
+
+
+look up the primary (or unique) key to verify existence
+take the appropriate action based on whether the primary (or unique) key exists
+The first step incurs a disk seek on large data sets with an ad-hoc primary (or unique key). And that is why it is slow.
+
+So, the moral of the story is this. In MySQL, “insert … on duplicate key update” is slower than “replace into”. Although the sematics are slightly different in the case where the primary key is found (the former is defined as an update, whereas the latter is defined as a delete followed by an insert), if possible, the simpler semantics of “replace into” allow it to be faster than “insert … on duplicate key update”.
