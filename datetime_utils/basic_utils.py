@@ -99,12 +99,17 @@ def round_down_datetime_to_nearest_x_minutes(datetime_value, mins):
 
 # print(round_to_nearest_x_minutes("2019-08-30 08:16:00", 15))
 
-print(type(datetime.now()))
+# print(type(datetime.now()))
+#
+# time = datetime.strptime("2019-10-05 23:45:00", COMMON_DATE_TIME_FORMAT)
+#
+# print(round_up_datetime_to_nearest_x_minutes(time, 15))
+# print(round_down_datetime_to_nearest_x_minutes(time, 15))
 
-time = datetime.strptime("2019-10-05 23:45:00", COMMON_DATE_TIME_FORMAT)
 
-print(round_up_datetime_to_nearest_x_minutes(time, 15))
-print(round_down_datetime_to_nearest_x_minutes(time, 15))
+### UTC time
+def get_SL_time_now():
+    return  (datetime.utcnow() + timedelta(hours=5, minutes=30))
 
 
 
