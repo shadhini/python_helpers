@@ -4,6 +4,15 @@ import sys
 # prog = re.compile('([A-Z]\d+)+')
 prog = re.compile('flo2d_10_+')
 
+while True:
+  line = sys.stdin.readline()
+  if not line: break
+
+  if prog.match(line):
+    print ('matched')
+  else:
+    print ('not matched')
+
 # fbakjbg
 # not matched
 # svsjvsnkv153
@@ -18,12 +27,3 @@ prog = re.compile('flo2d_10_+')
 # matched
 # D2DDNYDMYYYYYM
 # matched
-
-while True:
-  line = sys.stdin.readline()
-  if not line: break
-
-  if prog.match(line):
-    print ('matched')
-  else:
-    print ('not matched')
