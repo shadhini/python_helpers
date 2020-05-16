@@ -1,0 +1,2 @@
+ALTER TABLE curw_sim.grid_map_flo2d_raincell
+DROP COLUMN cell_id
