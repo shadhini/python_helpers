@@ -56,6 +56,10 @@ print(df[df.columns[0]])
 # for index, row in df.iteritems():
 #     print(index, row)
 
+# iterating the columns
+for col in df.columns:
+    print(col)
+
 # refering to column through column index --> df[[column_index]]
 # print(df[[0]])
 
