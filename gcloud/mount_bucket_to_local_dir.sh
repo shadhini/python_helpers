@@ -1,3 +1,12 @@
+######### simple guide ########################
+# https://cloud.google.com/storage/docs/gcs-fuse
+mkdir /path/to/mount
+gcsfuse --implicit-dirs example-bucket /path/to/mount/
+ls /path/to/mount
+
+# --implicit-dirs ==> https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/semantics.md#implicit-directories
+##################################################
+
 # Create directory to mount the bucket
 cd /mnt/disks
 sudo mkdir curwsl_nfs
