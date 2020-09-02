@@ -27,4 +27,7 @@ print(df)
 df['b'] = df['b'].fillna(df['c'])
 df['a'] = df['a'].fillna(df['b'])
 
+# for col in df.columns:
+#     df[col] = df[col].fillna(df['b'])
+
 print(df)
