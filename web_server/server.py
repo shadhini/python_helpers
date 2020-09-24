@@ -8,7 +8,7 @@ def createServer():
         serversocket.listen(5) # Dear operating system, if I'm busy handling one phone call,
         # you can hold on to four more and queue them and then
         # I'll come back and get them for you.
-        while(1):
+        while(1): # infinite call
             (clientsocket, address) = serversocket.accept() # this accept is blocking.
             # It stops and it just sits there. And it can sit there forever.
             # And if nobody calls it, nothing happens.
@@ -24,7 +24,12 @@ def createServer():
             data += "\r\n"
             data += "<html><body>Hello World</body></html>\r\n\r\n"
             clientsocket.sendall(data.encode())
+            #  when you're in a socket, that thing that's going across the socket almost always is supposed to be UTF-8
+            # so unicode need to be encoded
             clientsocket.shutdown(SHUT_WR)
+            # we close it from server side, it's half closed,
+            # and then the client gets all of its data, gets the indication that it closed, knows it's finished all the data,
+            # and then the client shuts its side down
     except KeyboardInterrupt:
         print("\nShutting down...\n")
     except Exception as exc:
