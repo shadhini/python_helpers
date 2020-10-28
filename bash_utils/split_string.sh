@@ -9,6 +9,8 @@ fi
 # split string by delimiter '-'
 IFS='-' read -ra DATELIST <<< "$date"
 echo $DATELIST
+
+
 session_id=""
 for i in "${DATELIST[@]}"; do
     session_id="$session_id$i"
